@@ -15,7 +15,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
                 D
               </div>
-              <span>DailyTrack</span>
+              <span>Daily_Track</span>
             </Link>
 
             <nav className="hidden sm:flex items-center gap-1 text-sm font-medium">
@@ -124,7 +124,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </main>
 
       <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        <p>© DailyTrack App Group • Phase 1</p>
+        <p>© Daily_Track App Group • Phase 1</p>
       </footer>
     </div>
   );

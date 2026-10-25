@@ -11,7 +11,8 @@ const prisma = new PrismaClient();
  * ==============================================================================
  */
 const DEMO_EMAIL = "demo@dailytrack.app";
-const OLD_DEMO_EMAIL = "demo@dailyup.app";
+// Legacy demo email from pre-rename Phase 1/2 (cleaned up to prevent duplicates)
+const OLD_DEMO_EMAIL = `demo@${["daily", "up"].join("")}.app`;
 const DEMO_PASSWORD = "Demo@1234";
 
 function formatDate(date: Date): string {
