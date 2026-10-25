@@ -25,8 +25,8 @@ export default function HomePage() {
               Sign In
             </Link>
             <Link
-              id="nav-link-register"
-              href="/register"
+              id="nav-link-signup"
+              href="/signup"
               className="text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 px-3.5 py-1.5 rounded-lg transition-opacity"
             >
               Get Started
@@ -105,7 +105,7 @@ export default function HomePage() {
 
           <div className="p-5 rounded-2xl border border-border bg-card hover:shadow-md transition-shadow">
             <div className="text-primary font-bold text-sm uppercase tracking-wider mb-1">
-              (auth) /login & /register
+              (auth) /login & /signup
             </div>
             <h3 className="font-semibold text-base mb-1">Authentication Group</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">

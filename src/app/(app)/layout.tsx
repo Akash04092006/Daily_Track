@@ -34,6 +34,27 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 Habits
               </Link>
               <Link
+                id="nav-calendar"
+                href="/calendar"
+                className="px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              >
+                Calendar
+              </Link>
+              <Link
+                id="nav-analytics"
+                href="/analytics"
+                className="px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              >
+                Analytics
+              </Link>
+              <Link
+                id="nav-goals"
+                href="/goals"
+                className="px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              >
+                Goals
+              </Link>
+              <Link
                 id="nav-settings"
                 href="/settings"
                 className="px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
@@ -53,25 +74,46 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </header>
 
       {/* Mobile nav bar */}
-      <div className="sm:hidden border-b border-border bg-card px-4 py-2 flex items-center justify-around text-xs font-medium">
+      <div className="sm:hidden border-b border-border bg-card px-4 py-2 flex items-center justify-around text-xs font-medium overflow-x-auto">
         <Link
           id="mobile-nav-dashboard"
           href="/dashboard"
-          className="py-1 text-muted-foreground hover:text-foreground"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
         >
           Dashboard
         </Link>
         <Link
           id="mobile-nav-habits"
           href="/habits"
-          className="py-1 text-muted-foreground hover:text-foreground"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
         >
           Habits
         </Link>
         <Link
+          id="mobile-nav-calendar"
+          href="/calendar"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
+        >
+          Calendar
+        </Link>
+        <Link
+          id="mobile-nav-analytics"
+          href="/analytics"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
+        >
+          Analytics
+        </Link>
+        <Link
+          id="mobile-nav-goals"
+          href="/goals"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
+        >
+          Goals
+        </Link>
+        <Link
           id="mobile-nav-settings"
           href="/settings"
-          className="py-1 text-muted-foreground hover:text-foreground"
+          className="py-1 px-2 text-muted-foreground hover:text-foreground whitespace-nowrap"
         >
           Settings
         </Link>
