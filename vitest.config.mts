@@ -6,6 +6,10 @@ export default defineConfig({
     globals: true,
     environment: "node",
     include: ["tests/**/*.test.ts", "src/**/*.test.ts"],
+    env: {
+      DATABASE_URL: "file:./test.db",
+      AUTH_SECRET: "daily-track-secure-auth-secret-key-must-be-32-chars-long!",
+    },
   },
   resolve: {
     alias: {
