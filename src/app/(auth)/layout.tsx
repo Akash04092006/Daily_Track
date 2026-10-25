@@ -13,7 +13,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
             D
           </div>
-          <span>DailyTrack</span>
+          <span>Daily_Track</span>
         </Link>
         <ThemeToggle />
       </header>
@@ -25,7 +25,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       </main>
 
       <footer className="p-4 text-center text-xs text-muted-foreground">
-        <p>© DailyTrack • Secure Authentication Group</p>
+        <p>© Daily_Track • Secure Authentication Group</p>
       </footer>
     </div>
   );

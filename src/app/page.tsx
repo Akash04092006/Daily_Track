@@ -10,7 +10,7 @@ export default function HomePage() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg shadow-sm">
               D
             </div>
-            <span className="font-semibold text-lg tracking-tight">DailyTrack</span>
+            <span className="font-semibold text-lg tracking-tight">Daily_Track</span>
             <span className="text-xs px-2 py-0.5 rounded-full bg-accent text-accent-foreground font-medium ml-1">
               Phase 1 Foundation
             </span>
@@ -51,7 +51,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            DailyTrack helps you stay accountable with minimal friction, fast daily
+            Daily_Track helps you stay accountable with minimal friction, fast daily
             logging, and streak insights.
           </p>
 
@@ -117,7 +117,7 @@ export default function HomePage() {
       </main>
 
       <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        <p>DailyTrack Foundation Architecture • Phase 1</p>
+        <p>Daily_Track Foundation Architecture • Phase 1</p>
       </footer>
     </div>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DailyTrack — Minimalist Habit & Daily Routine Tracker",
+  title: "Daily_Track — Minimalist Habit & Daily Routine Tracker",
   description:
     "Track daily habits, build streaks, and maintain momentum with an intuitive, privacy-first tracker.",
 };

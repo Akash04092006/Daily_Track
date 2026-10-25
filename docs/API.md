@@ -1,6 +1,6 @@
-# REST API Reference — DailyTrack
+# REST API Reference — Daily_Track
 
-This document describes all REST API endpoints for **DailyTrack** (Phase 2: Data & Backend). It serves as the official integration contract for Phase 3 UI development.
+This document describes all REST API endpoints for **Daily_Track** (Phase 2: Data & Backend). It serves as the official integration contract for Phase 3 UI development.
 
 ---
 

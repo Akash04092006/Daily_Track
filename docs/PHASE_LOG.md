@@ -1,4 +1,4 @@
-# Project Execution Log — DailyTrack
+# Project Execution Log — Daily_Track
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### 1. Executive Summary
 
-Phase 1 established the complete engineering baseline for DailyTrack. The repository was cloned and initialized cleanly, preserving scaffolded Next.js files at the project root. All 11 foundational tasks were implemented, verified, tested, and documented with comprehensive quality gates.
+Phase 1 established the complete engineering baseline for Daily_Track. The repository was cloned and initialized cleanly, preserving scaffolded Next.js files at the project root. All 11 foundational tasks were implemented, verified, tested, and documented with comprehensive quality gates.
 
 ### 2. Completed Tasks Checklist
 
@@ -48,7 +48,7 @@ Phase 2 built the complete data architecture, session-based authentication syste
   - Used string columns backed by shared TypeScript/Zod constants instead of Prisma native enums.
 - [x] **Task 2: Migration & Idempotent Seed**:
   - Created initial migration `20261025081547_init`.
-  - Created `prisma/seed.ts` with demo user (`demo@dailyup.app` / `Demo@1234`), 7 habits across categories, 301 habit logs across 60 days, 31 daily journals across 30 days, 3 goals with milestones, and `GoalHabit` links.
+  - Created `prisma/seed.ts` with demo user (`demo@dailytrack.app` / `Demo@1234`), 7 habits across categories, 301 habit logs across 60 days, 31 daily journals across 30 days, 3 goals with milestones, and `GoalHabit` links.
   - Configured `tsx` seed runner and npm scripts: `db:migrate`, `db:seed`, `db:reset`, `db:studio`.
 - [x] **Task 3: Session Authentication & Route Protection**:
   - Implemented `bcryptjs` password hashing and `jose` signed JWT session tokens (7-day TTL).
@@ -76,12 +76,11 @@ Phase 2 built the complete data architecture, session-based authentication syste
 
 ### 3. Dependency Additions
 
-| Package           | Version    | Purpose                                                                       |
-| ----------------- | ---------- | ----------------------------------------------------------------------------- |
-| `bcryptjs`        | `^3.0.3`   | Pure JavaScript password hashing (avoids node-gyp on Windows)                 |
-| `jose`            | `^6.2.13`  | Web Crypto API based JWT signing and verification for Next.js 16 Proxy & Node |
-| `tsx`             | `^4.23.15` | TypeScript execution runner for Prisma seed script (devDependencies)          |
-| `@types/bcryptjs` | `^2.4.6`   | TypeScript type definitions for bcryptjs (devDependencies)                    |
+| Package    | Version    | Purpose                                                                       |
+| ---------- | ---------- | ----------------------------------------------------------------------------- |
+| `bcryptjs` | `^3.0.3`   | Pure JavaScript password hashing (bundles native TypeScript types in 3.x)     |
+| `jose`     | `^6.2.13`  | Web Crypto API based JWT signing and verification for Next.js 16 Proxy & Node |
+| `tsx`      | `^4.23.15` | TypeScript execution runner for Prisma seed script (devDependencies)          |
 
 ### 4. Key Architectural Decisions & Deviations
 

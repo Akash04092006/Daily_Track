@@ -1,6 +1,6 @@
-# Data Model & Schema Specification — DailyTrack
+# Data Model & Schema Specification — Daily_Track
 
-This document describes the complete relational data architecture, entity relationships, model attributes, and database-level business rules for **DailyTrack** (Phase 2: Data & Backend).
+This document describes the complete relational data architecture, entity relationships, model attributes, and database-level business rules for **Daily_Track** (Phase 2: Data & Backend).
 
 ---
 

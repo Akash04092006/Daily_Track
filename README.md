@@ -1,6 +1,6 @@
-# DailyTrack 🎯
+# Daily_Track 🎯
 
-DailyTrack is a minimalist, privacy-first habit and daily routine tracker engineered with modern web standards, an App Router architecture, session cookie authentication, and local SQLite persistence.
+Daily_Track is a minimalist, privacy-first habit and daily routine tracker engineered with modern web standards, an App Router architecture, session cookie authentication, and local SQLite persistence.
 
 ---
 
@@ -157,7 +157,7 @@ npm run db:seed
 
 ### 5. Demo Account Credentials
 
-- **Email**: `demo@dailyup.app`
+- **Email**: `demo@dailytrack.app`
 - **Password**: `Demo@1234`
 - **Seeded Data**: 7 habits across categories, 301 habit logs (60 days), 31 daily journal entries (30 days), 3 goals with milestones, and habit associations.
 

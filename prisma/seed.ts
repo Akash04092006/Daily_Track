@@ -6,11 +6,12 @@ const prisma = new PrismaClient();
 /**
  * ==============================================================================
  * DEMO USER CREDENTIALS (DEMO-ONLY DATA FOR LOCAL DEVELOPMENT AND TESTING)
- * Email:    demo@dailyup.app
+ * Email:    demo@dailytrack.app
  * Password: Demo@1234
  * ==============================================================================
  */
-const DEMO_EMAIL = "demo@dailyup.app";
+const DEMO_EMAIL = "demo@dailytrack.app";
+const OLD_DEMO_EMAIL = "demo@dailyup.app";
 const DEMO_PASSWORD = "Demo@1234";
 
 function formatDate(date: Date): string {
@@ -23,9 +24,11 @@ function formatDate(date: Date): string {
 async function main() {
   console.log("🌱 Starting database seeding...");
 
-  // 1. Idempotency cleanup: Delete existing demo user and cascaded relations
+  // 1. Idempotency cleanup: Delete existing demo user and legacy demo user
   await prisma.user.deleteMany({
-    where: { email: DEMO_EMAIL },
+    where: {
+      email: { in: [DEMO_EMAIL, OLD_DEMO_EMAIL] },
+    },
   });
 
   // 2. Hash password and create demo user

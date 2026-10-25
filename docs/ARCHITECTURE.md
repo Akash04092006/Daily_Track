@@ -1,12 +1,12 @@
-# System Architecture — DailyTrack
+# System Architecture — Daily_Track
 
-This document details the architectural decisions, design patterns, and engineering principles implemented in **DailyTrack**.
+This document details the architectural decisions, design patterns, and engineering principles implemented in **Daily_Track**.
 
 ---
 
 ## 1. Architectural Overview
 
-DailyTrack is constructed using modern full-stack web standards:
+Daily_Track is constructed using modern full-stack web standards:
 
 - **Presentation Layer**: Next.js App Router with React Server Components (RSC) by default and targeted Client Components (`"use client"`) for interactivity.
 - **Styling & Design System**: Tailwind CSS v4 design tokens via CSS custom properties and class-based dark mode.
