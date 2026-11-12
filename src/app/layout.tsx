@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Figtree } from "next/font/google";
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree" });
 
 export const metadata: Metadata = {
   title: "Daily_Track — Minimalist Habit & Daily Routine Tracker",

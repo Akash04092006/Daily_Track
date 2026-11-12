@@ -1,0 +1,35 @@
+/* Daily_Track design system: charcoal glass. Import in globals.css AFTER tailwind: @import "./glass.css"; */
+:root{
+  --bg:#E7E9EC; --glow-a:rgba(255,255,255,.9); --glow-b:rgba(150,160,175,.35);
+  --glass:rgba(255,255,255,.58); --glass-strong:rgba(255,255,255,.8);
+  --glass-border:rgba(20,22,26,.10); --highlight:rgba(255,255,255,.9);
+  --fg:#16181B; --fg-muted:#5B616A; --accent:#A9762B; --accent-fg:#fff; --ok:#2B8A64;
+  --shadow:0 12px 32px -14px rgba(20,22,26,.28);
+}
+.dark{
+  --bg:#0E0F11; --glow-a:rgba(92,100,112,.30); --glow-b:rgba(60,66,76,.28);
+  --glass:rgba(38,41,46,.55); --glass-strong:rgba(50,54,60,.74);
+  --glass-border:rgba(255,255,255,.09); --highlight:rgba(255,255,255,.07);
+  --fg:#ECEEF0; --fg-muted:#9AA1AB; --accent:#E3B866; --accent-fg:#1A1407; --ok:#6FCFA6;
+  --shadow:0 20px 44px -18px rgba(0,0,0,.75);
+}
+@theme inline{
+  --color-fg:var(--fg); --color-muted:var(--fg-muted); --color-accent:var(--accent);
+  --color-accent-fg:var(--accent-fg); --color-ok:var(--ok); --font-sans:var(--font-figtree),system-ui,sans-serif;
+}
+html{color-scheme:light} html.dark{color-scheme:dark}
+body{
+  min-height:100dvh; color:var(--fg); font-family:var(--font-figtree),system-ui,sans-serif;
+  background:radial-gradient(60rem 40rem at 15% -10%,var(--glow-a),transparent 60%),
+             radial-gradient(50rem 36rem at 95% 10%,var(--glow-b),transparent 60%),var(--bg);
+  background-attachment:fixed;
+}
+.glass,.glass-strong{
+  background:var(--glass); border:1px solid var(--glass-border); border-radius:22px;
+  box-shadow:inset 0 1px 0 var(--highlight),var(--shadow);
+  -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+}
+.glass-strong{background:var(--glass-strong); border-radius:999px; -webkit-backdrop-filter:blur(28px) saturate(150%); backdrop-filter:blur(28px) saturate(150%)}
+@supports not (backdrop-filter:blur(1px)){.glass,.glass-strong{background:var(--bg)}}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
