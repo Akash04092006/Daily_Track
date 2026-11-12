@@ -108,3 +108,52 @@ Phase 2 built the complete data architecture, session-based authentication syste
 
 - **Streak Calculation Stub**: `recalculateStreaks(habitId)` in `src/server/services/streaks.ts` is currently a documented no-op called by habit log writes. Real streak computation, freeze logic, and historical streak auditing will be completed in Phase 5.
 - **In-Memory Rate Limiting**: The rate limiter on login and signup currently uses an in-memory `Map`. In a clustered or serverless production deployment, this should be backed by Redis or Upstash.
+
+---
+
+## Phase 3 Part 1 Execution Log — UI/UX Design System & Verification
+
+- **Phase**: 3 Part 1 — UI/UX Foundation & Glassmorphism Design
+- **Date**: November 13, 2026
+- **Status**: Completed Successfully
+- **Target Branch**: `phase-3-ui-design`
+- **Base Branch**: `main`
+
+### 1. Executive Summary
+
+Phase 3 Part 1 introduced the Charcoal Glass design system and signature UI components designed by Claude, including the floating glass navbar (`TopNav`), glassmorphic cards and buttons (`GlassCard`, `GlassButton`), the signature daily progress ring (`ProgressRing`), and the interactive dashboard layout with mock habit checkboxes. All components and styling tokens were verified, wired into the Next.js 16 App Router hierarchy, and tested across dark/light themes and desktop/mobile viewports.
+
+### 2. Files Added & Verified
+
+- `src/app/glass.css`: Defines CSS variables for light (`:root`) and dark (`.dark`) palettes, glassmorphism utilities (`.glass`, `.glass-strong`), background radial glow gradients, and inline `@theme` tokens.
+- `src/components/ui/glass.tsx`: Provides `GlassCard`, `GlassButton`, and the signature SVG `ProgressRing` component.
+- `src/components/features/top-nav.tsx`: Floating glass navigation bar with pill-shaped route links, horizontal scroll on mobile, and theme toggle button integration.
+- `src/app/(app)/layout.tsx`: Replaced with layout rendering `TopNav` sticky header and centered main content container.
+- `src/app/(app)/dashboard/page.tsx`: Replaced with interactive dashboard featuring `ProgressRing`, habit checkbox list with dynamic completion counter, and daily check-in card.
+- `docs/DESIGN_SPEC.md`: Documentation of the charcoal glass design tokens, typography, and accent colors.
+- `docs/screenshots/`: Visual verification screenshots captured via headless browser automation:
+  - `dashboard-desktop-dark.png` (1280x800 desktop, dark mode)
+  - `dashboard-desktop-light.png` (1280x800 desktop, light mode)
+  - `dashboard-mobile-dark.png` (390x844 mobile, dark mode)
+  - `dashboard-mobile-light.png` (390x844 mobile, light mode)
+
+### 3. Wiring Fixes Made
+
+1. **`src/app/globals.css` Import Order**:
+   - Fixed placement of `@import "./glass.css";` to immediately follow `@import "tailwindcss";` at the top of the file, removing trailing import from EOF.
+2. **`src/app/layout.tsx` Google Font Variable**:
+   - Loaded Figtree using `next/font/google` (`variable: "--font-figtree"`) and applied `figtree.variable` to the `<html>` element className while preserving `suppressHydrationWarning` and the anti-flash dark-mode inline script.
+3. **`src/components/features/top-nav.tsx` ThemeToggle Import**:
+   - Verified that `top-nav.tsx` correctly imports the named export `{ ThemeToggle }` from `@/components/theme-toggle`.
+4. **`next.config.ts` Turbopack Runtime Configuration**:
+   - Configured `experimental: { turbopackPluginRuntimeStrategy: "forceWorkerThreads" }` to prevent Node.js child process IPC connection failures (`node process exited before we could connect to it with exit code: 0`) when evaluating `@tailwindcss/turbopack` loader on Windows with Node v25.
+
+### 4. Verification Results
+
+| Quality Check                | Command             |  Result  | Details                                                   |
+| ---------------------------- | ------------------- | :------: | --------------------------------------------------------- |
+| **Lint**                     | `npm run lint`      | **PASS** | ESLint passed with 0 errors, 0 warnings                   |
+| **Typecheck**                | `npm run typecheck` | **PASS** | TypeScript compiler (`tsc --noEmit`) passed with 0 errors |
+| **Unit & Integration Tests** | `npm test`          | **PASS** | 7 test files, 47/47 tests passed                          |
+| **Production Build**         | `npm run build`     | **PASS** | Turbopack production build succeeded; 24 routes compiled  |
+| **Interactive Dev & UI**     | `npm run dev`       | **PASS** | Verified authenticated session, navbar, ring, checkboxes  |
